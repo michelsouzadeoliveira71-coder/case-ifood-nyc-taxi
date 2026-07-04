@@ -1,0 +1,6 @@
+# Ambiente: Databricks Community Edition
+# PySpark e Delta Lake são pré-instalados no Databricks.
+# Este arquivo documenta as versões mínimas utilizadas no pipeline.
+
+pyspark>=3.4.0
+delta-spark>=2.4.0
