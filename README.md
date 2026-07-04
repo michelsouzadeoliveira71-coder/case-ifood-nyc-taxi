@@ -1,4 +1,4 @@
-# Case iFood — Pipeline de Dados NYC Taxi 🚕
+# Case — Pipeline de Dados NYC Taxi 🚕
 
 Este projeto implementa um pipeline de dados utilizando PySpark e Delta Lake para ingestão, padronização e disponibilização dos dados de corridas de táxi de Nova York (NYC TLC). A solução segue a arquitetura Medallion (Bronze → Silver → Gold) e responde às análises propostas no desafio técnico do iFood.
 
