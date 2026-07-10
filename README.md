@@ -95,15 +95,14 @@ Gold
 Estrutura do Repositório
 case-ifood-nyc-taxi/
 │
+├── analysis/
+│   ├── queries_analiticas.py
+│   ├── queries_analiticas.sql
 ├── src/
 │   ├── 01_ingest_bronze.py
 │   ├── 02_transform_silver.py
 │   └── 03_gold.py
 │
-├── analysis/
-│   ├── 03_data_quality_audit.py
-│   ├── 04_gold_audit.py
-│   └── queries_analiticas.sql
 │
 ├── README.md
 └── requirements.txt
@@ -146,12 +145,13 @@ WHERE taxi_type = 'yellow'
 GROUP BY pickup_month
 ORDER BY pickup_month;
 
-Mês	Média total_amount	Corridas
-Janeiro	$ 27,44	3.041.418
-Fevereiro	$ 27,33	2.888.723
-Março	$ 28,26	3.373.353
-Abril	$ 28,76	3.257.912
-Maio	$ 29,46	3.481.178
+| Mês       | Média total_amount | Corridas  |
+|-----------|--------------------|-----------|
+| Janeiro   | $ 27,44            | 3.041.418 |
+| Fevereiro | $ 27,33            | 2.888.723 |
+| Março     | $ 28,26            | 3.373.353 |
+| Abril     | $ 28,76            | 3.257.912 |
+| Maio      | $ 29,46            | 3.481.178 |
 
 Conclusões:
 O ticket médio apresentou crescimento gradual entre janeiro e maio de 2023.
@@ -167,19 +167,21 @@ WHERE pickup_month = 5
   AND passenger_count > 0
 GROUP BY pickup_hour
 ORDER BY pickup_hour;
-Hora	Média	Hora	Média
-0h	1,4269	12h	1,3746
-1h	1,4366	13h	1,3829
-2h	1,4542	14h	1,3880
-3h	1,4498	15h	1,3992
-4h	1,4039	16h	1,3961
-5h	1,2844	17h	1,3871
-6h	1,2617	18h	1,3812
-7h	1,2814	19h	1,3900
-8h	1,2937	20h	1,3996
-9h	1,3109	21h	1,4182
-10h	1,3465	22h	1,4269
-11h	1,3615	23h	1,4214
+| Hora | Média  | Hora | Média  |
+|------|--------|------|--------|
+| 0h   | 1,4269 | 12h  | 1,3746 |
+| 1h   | 1,4366 | 13h  | 1,3829 |
+| 2h   | 1,4542 | 14h  | 1,3880 |
+| 3h   | 1,4498 | 15h  | 1,3992 |
+| 4h   | 1,4039 | 16h  | 1,3961 |
+| 5h   | 1,2844 | 17h  | 1,3871 |
+| 6h   | 1,2617 | 18h  | 1,3812 |
+| 7h   | 1,2814 | 19h  | 1,3900 |
+| 8h   | 1,2937 | 20h  | 1,3996 |
+| 9h   | 1,3109 | 21h  | 1,4182 |
+| 10h  | 1,3465 | 22h  | 1,4269 |
+| 11h  | 1,3615 | 23h  | 1,4214 |
+
 Conclusões:
 
 A média de passageiros por corrida permaneceu próxima de 1,36 ao longo do dia.
